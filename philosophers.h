@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fileonar <fileonar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/04 19:21:43 by fileonar          #+#    #+#             */
-/*   Updated: 2025/03/04 19:26:32 by fileonar         ###   ########.fr       */
+/*   Created: 2025/03/04 19:22:41 by fileonar          #+#    #+#             */
+/*   Updated: 2025/03/04 19:23:38 by fileonar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#ifndef PHILOSOPHERS_H
+# define PHILOSOPHERS_H
 
-int	main(void)
-{
-	ft_putstr("Hello, World!\n");
-	return (0);
-}
+//LOCAL LIBS
+# include "./libft/libft.h"
+
+//STRUCTS
+
+//PROTOTYPES
+
+
+#endif
