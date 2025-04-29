@@ -17,7 +17,7 @@ static int	arguments_check(int argc, char **argv)
 	if (argc < 5 || argc > 6)
 		return (error_msg("Invalid number of arguments..."), EXIT_FAILURE);
 	if (argc == 6 && ft_atoi(argv[5]) < 1)
-		return (IMMIDIATE_SUCCESS);
+		return (EXIT_SUCCESS);
 	while (--argc > 0)
 		if (ft_isdigit(argv[argc]) == EXIT_FAILURE)
 			return (error_msg("Arguments must be integers..."), EXIT_FAILURE);

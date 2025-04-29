@@ -18,24 +18,17 @@ CFLAGS =  -Wall -Werror -Wextra -g
 NAME = philosophers
 
 SRC = main.c 
-LIBFT_DIR = ./libft
-LIBFT = $(LIBFT_DIR)/libft.a
-INCLUDES = -I $(LIBFT_DIR)
 HEADER = philosophers.h
 
 OBJS = $(SRC:%.c=bin/%.o)
 
-all: $(LIBFT) $(NAME)
-
-$(LIBFT):
-	@git submodule update --init $(LIBFT_DIR)
-	@make -C $(LIBFT_DIR) all
+all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) $(INCLUDES)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 bin/%.o : %.c | bin
-	$(CC) -c -o $@ $< $(CFLAGS) $(INCLUDES)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
 bin:
 	@mkdir -p bin
