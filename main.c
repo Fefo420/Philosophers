@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fefo <fefo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: fileonar <fileonar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 19:21:43 by fileonar          #+#    #+#             */
-/*   Updated: 2025/04/29 08:53:12 by fefo             ###   ########.fr       */
+/*   Updated: 2025/05/04 13:27:55 by fileonar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ static int	arguments_check(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	arguments_check(argc, argv);
+	t_state_data	sdata;
+	const int		arg_check_return = arguments_check(argc, argv);
+
+	init(sdata, argc, argv);
 	return (0);
 }
