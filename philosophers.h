@@ -6,7 +6,7 @@
 /*   By: fileonar <fileonar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 19:22:41 by fileonar          #+#    #+#             */
-/*   Updated: 2025/05/07 18:15:35 by fileonar         ###   ########.fr       */
+/*   Updated: 2025/05/07 22:07:31 by fileonar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,15 @@
 
 # define FAST_SUCCESS 3
 
-//STRUCTS
+//ENUM
+typedef enum e_state
+{
+	THINKING,
+	EATING,
+	SLEEPING,
+	DEAD,
+	FORKING,
+}	t_state;
 
 typedef struct s_philo
 {
@@ -40,6 +48,7 @@ typedef struct s_philo
 	pthread_mutex_t			*l_fork;
 }	t_philo;
 
+//STRUCTS
 typedef struct s_state_stuff
 {
 	int				counter_philos;
@@ -59,18 +68,16 @@ typedef struct s_state_stuff
 	pthread_mutex_t	mutex_sleep;
 }	t_state_data;
 
-typedef enum e_state
-{
-	THINKING,
-	EATING,
-	SLEEPING,
-	DEAD,
-	FORKING,
-}	t_state;
+
+
 
 //PROTOTYPES
 void	init_state_data(t_state_data *s_data, int argc, char **argv);
 void	init(t_state_data *s_data, int argc, char **argv);
+
+//THREADS
+int	create_threads(t_philo *philo_data, t_state_data *sdata);
+int	threads_checker(t_philo *philo_data, t_state_data *sdata);
 
 //UTILS
 int		ft_atoi(const char *str);
@@ -78,4 +85,8 @@ int		ft_strlen(char *str);
 int		ft_isdigit(char *str);
 void	ft_usleep(size_t milliseconds, t_state_data *sdata);
 size_t	get_current_time(void);
+void	error_msg(char *msg);
+
+//PHILOSOPHIZER
+void	*philosophizer(void *philo);
 #endif
