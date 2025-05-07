@@ -6,7 +6,7 @@
 /*   By: fileonar <fileonar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 19:22:41 by fileonar          #+#    #+#             */
-/*   Updated: 2025/05/07 18:10:02 by fileonar         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:15:35 by fileonar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,12 @@ typedef struct s_state_stuff
 	int				error;
 	int				meals;
 	t_philo			*philos;
+	pthread_mutex_t	*forks;	
+	pthread_mutex_t	msg;
+	pthread_mutex_t	mutex;
+	pthread_mutex_t	mutex_dead;
+	pthread_mutex_t	mutex_eating;
+	pthread_mutex_t	mutex_sleep;
 }	t_state_data;
 
 typedef enum e_state
@@ -63,6 +69,13 @@ typedef enum e_state
 }	t_state;
 
 //PROTOTYPES
+void	init_state_data(t_state_data *s_data, int argc, char **argv);
+void	init(t_state_data *s_data, int argc, char **argv);
 
-
+//UTILS
+int		ft_atoi(const char *str);
+int		ft_strlen(char *str);
+int		ft_isdigit(char *str);
+void	ft_usleep(size_t milliseconds, t_state_data *sdata);
+size_t	get_current_time(void);
 #endif
