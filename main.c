@@ -6,7 +6,7 @@
 /*   By: fileonar <fileonar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 19:21:43 by fileonar          #+#    #+#             */
-/*   Updated: 2025/05/04 13:30:30 by fileonar         ###   ########.fr       */
+/*   Updated: 2025/05/07 22:03:53 by fileonar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 	if (init_thread(&sdata) == EXIT_FAILURE)
 		return (error_msg("Something went wrong when initializing thread..."),
 			EXIT_FAILURE);
-	if (philosophize(&sdata))
+	if (philosophizer(&sdata))
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
 	return (0);
