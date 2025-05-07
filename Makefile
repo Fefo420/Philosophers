@@ -6,7 +6,7 @@
 #    By: fileonar <fileonar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/07 18:46:57 by fileonar          #+#    #+#              #
-#    Updated: 2025/03/04 19:25:50 by fileonar         ###   ########.fr        #
+#    Updated: 2025/05/07 22:00:42 by fileonar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,14 @@ CFLAGS =  -Wall -Werror -Wextra -g
 
 NAME = philosophers
 
-SRC = main.c 
+SRC =	main.c \
+		init.c \
+		checkers.c \
+		mutex.c \
+		utils.c \
+		utils2.c \
+		# philosphers.c \
+		
 HEADER = philosophers.h
 
 OBJS = $(SRC:%.c=bin/%.o)
