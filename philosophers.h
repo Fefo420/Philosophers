@@ -6,7 +6,7 @@
 /*   By: fileonar <fileonar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 19:22:41 by fileonar          #+#    #+#             */
-/*   Updated: 2025/05/04 12:15:51 by fileonar         ###   ########.fr       */
+/*   Updated: 2025/05/04 13:30:54 by fileonar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <sys/time.h>
 # include <limits.h>
 # include <string.h>
+
+# define FAST_SUCCESS 3
 
 //STRUCTS
 
