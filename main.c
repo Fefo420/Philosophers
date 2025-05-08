@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fileonar <fileonar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fefo <fefo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 19:21:43 by fileonar          #+#    #+#             */
-/*   Updated: 2025/05/07 22:03:53 by fileonar         ###   ########.fr       */
+/*   Updated: 2025/05/08 03:09:05 by fefo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 	else if (arg_check_return == FAST_SUCCESS)
 		return (EXIT_SUCCESS);
 	init_state_data(&sdata, argc, argv);
-	if (init_thread(&sdata) == EXIT_FAILURE)
+	if (init_thread(&sdata, argc, argv) == EXIT_FAILURE)
 		return (error_msg("Something went wrong when initializing thread..."),
 			EXIT_FAILURE);
 	if (philosophizer(&sdata))
