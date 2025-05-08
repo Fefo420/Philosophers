@@ -6,7 +6,7 @@
 /*   By: fefo <fefo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 19:22:41 by fileonar          #+#    #+#             */
-/*   Updated: 2025/05/08 03:05:23 by fefo             ###   ########.fr       */
+/*   Updated: 2025/05/09 00:27:00 by fefo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,18 +68,13 @@ typedef struct s_state_stuff
 	pthread_mutex_t	mutex_sleep;
 }	t_state_data;
 
-
-
-//PROTOTYPES
-
 //INIT
 void		init_state_data(t_state_data *s_data, int argc, char **argv);
 int			init_thread(t_state_data *s_data, int argc, char **argv);
-static void	init_philo(t_state_data *sdata);
 
 //THREADS
-int	create_threads(t_philo *philo_data, t_state_data *sdata);
-int	threads_checker(t_philo *philo_data, t_state_data *sdata);
+int			create_threads(t_philo *philo_data, t_state_data *sdata);
+int			threads_maker(t_philo *philo_data, t_state_data *sdata);
 
 //UTILS
 int		ft_atoi(const char *str);
@@ -87,8 +82,27 @@ int		ft_strlen(char *str);
 int		ft_isdigit(char *str);
 void	ft_usleep(size_t milliseconds, t_state_data *sdata);
 size_t	get_current_time(void);
-void	error_msg(char *msg);
+void	ft_bzero(void *mem, size_t count);
+void	*ft_calloc(size_t count, size_t size);
 
 //PHILOSOPHIZER
-void	*philosophizer(void *philo);
+void	*philosophers_actions(void *philo);
+int		set_death(t_state_data *sdata, int i);
+
+//CHECKERS
+int 	death_checker(t_state_data *sdata);
+int		meal_checker(t_state_data *sdata);
+int		time_checker(t_state_data *sdata);
+void	*routine_checker(void *arg);
+int		checker(t_philo *philo);
+
+//ERRORS
+void	error_msg(char *msg);
+void	free_and_exit(t_state_data *sdata);
+void	philo_msg(t_philo *philo);
+
+int	eating(t_philo *philo);
+int	thinking(t_philo *philo);
+int	sleeping(t_philo *philo);
+void	*philo(void *philo);
 #endif

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fileonar <fileonar@student.42.fr>          +#+  +:+       +#+         #
+#    By: fefo <fefo@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/07 18:46:57 by fileonar          #+#    #+#              #
-#    Updated: 2025/05/07 22:04:57 by fileonar         ###   ########.fr        #
+#    Updated: 2025/05/09 00:29:47 by fefo             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,9 @@ SRC =	main.c \
 		mutex.c \
 		utils.c \
 		utils2.c \
-		# philosphers.c \
+		more_utils.c \
+		philosophers.c \
+		actions.c \
 		
 HEADER = philosophers.h
 
@@ -42,14 +44,12 @@ bin:
 
 clean:
 	@rm -fr bin
-	@make -C $(LIBFT_DIR) clean
 
 fclean: clean
 	@rm -f $(NAME)
-	@make -C $(LIBFT_DIR) fclean
 
 
-re: fclean all
+re: clean fclean all
 
 .PHONY: all clean fclean re
 
