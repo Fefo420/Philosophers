@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fileonar <fileonar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fefo <fefo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 19:22:41 by fileonar          #+#    #+#             */
-/*   Updated: 2025/05/07 22:07:31 by fileonar         ###   ########.fr       */
+/*   Updated: 2025/05/08 03:05:23 by fefo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,12 @@ typedef struct s_state_stuff
 
 
 
-
 //PROTOTYPES
-void	init_state_data(t_state_data *s_data, int argc, char **argv);
-void	init(t_state_data *s_data, int argc, char **argv);
+
+//INIT
+void		init_state_data(t_state_data *s_data, int argc, char **argv);
+int			init_thread(t_state_data *s_data, int argc, char **argv);
+static void	init_philo(t_state_data *sdata);
 
 //THREADS
 int	create_threads(t_philo *philo_data, t_state_data *sdata);

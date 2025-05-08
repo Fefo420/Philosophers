@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fileonar <fileonar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fefo <fefo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:02:20 by fileonar          #+#    #+#             */
-/*   Updated: 2025/05/07 21:51:25 by fileonar         ###   ########.fr       */
+/*   Updated: 2025/05/08 02:57:37 by fefo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,6 @@ void *death_checker(t_state_data *sdata)
 		return (1);
 	}
 	pthread_mutex_unlock(&sdata->mutex_dead);
-	return (0);
-}
-int		set_death(t_state_data *sdata, int i)
-{
-	
-	
 	return (0);
 }
 
