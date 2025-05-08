@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   uitls.c                                            :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fileonar <fileonar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fefo <fefo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 22:13:22 by fefo              #+#    #+#             */
-/*   Updated: 2025/05/04 10:53:03 by fileonar         ###   ########.fr       */
+/*   Updated: 2025/05/09 00:03:26 by fefo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	ft_usleep(size_t milliseconds, t_state_data *sdata)
 {
 	size_t	start;
 
-	if (check_death(sdata))
+	if (death_checker(sdata))
 		return ;
 	start = get_current_time();
 	usleep(milliseconds / 4 * 3);
