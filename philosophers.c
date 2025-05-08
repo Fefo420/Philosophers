@@ -6,7 +6,7 @@
 /*   By: fefo <fefo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 22:03:45 by fileonar          #+#    #+#             */
-/*   Updated: 2025/05/08 03:12:38 by fefo             ###   ########.fr       */
+/*   Updated: 2025/05/08 23:33:53 by fefo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		set_death(t_state_data *sdata, int i)
 
 }
 
-void	*philosophizer(void *philo)
+void	*philosophers_actions(void *philo)
 {
 	t_philo	*philo_data;
 

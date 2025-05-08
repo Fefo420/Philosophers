@@ -6,7 +6,7 @@
 /*   By: fefo <fefo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 16:45:28 by fefo              #+#    #+#             */
-/*   Updated: 2025/05/08 03:04:47 by fefo             ###   ########.fr       */
+/*   Updated: 2025/05/08 23:31:04 by fefo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,6 @@ static void	init_philo(t_state_data *sdata)
 	}
 }
 
-//init the threads
-int	init_thread(t_state_data *sdata, int argc, char **argv)
-{
-	sdata->philos = malloc(sizeof(t_philo) * sdata->counter_philos);
-	if (!sdata->philos)
-		return (EXIT_FAILURE);
-	sdata->forks = malloc(sizeof(pthread_mutex_t) * sdata->counter_philos);
-	if (!sdata->forks)
-		return (free(sdata->philos), EXIT_FAILURE);
-	if (init_mutex(sdata) == EXIT_FAILURE)
-		return (EXIT_FAILURE);
-	init_philo(sdata);
-	return (EXIT_SUCCESS);
-}
-
 //init the mutexes
 static int	init_mutex(t_state_data *sdata)
 {
@@ -71,9 +56,28 @@ static int	init_mutex(t_state_data *sdata)
 	return (EXIT_SUCCESS);
 }
 
+//init the threads
+int	init_thread(t_state_data *sdata, int argc, char **argv)
+{
+
+	(void) argc;
+	(void) argv;
+	sdata->philos = malloc(sizeof(t_philo) * sdata->counter_philos);
+	if (!sdata->philos)
+		return (EXIT_FAILURE);
+	sdata->forks = malloc(sizeof(pthread_mutex_t) * sdata->counter_philos);
+	if (!sdata->forks)
+		return (free(sdata->philos), EXIT_FAILURE);
+	if (init_mutex(sdata) == EXIT_FAILURE)
+		return (EXIT_FAILURE);
+	init_philo(sdata);
+	return (EXIT_SUCCESS);
+}
+
 //init the datas for the philos
 void	init_state_data(t_state_data *s_data, int argc, char **argv)
 {
+	(void) argc;
 	s_data->counter_philos = ft_atoi(argv[1]);
 	s_data->death_timer = ft_atoi(argv[2]);
 	s_data->eat_timer = ft_atoi(argv[3]);
@@ -86,4 +90,3 @@ void	init_state_data(t_state_data *s_data, int argc, char **argv)
 	else
 		s_data->meal_counter = -1;
 }
-

@@ -6,7 +6,7 @@
 /*   By: fefo <fefo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:02:20 by fileonar          #+#    #+#             */
-/*   Updated: 2025/05/08 02:57:37 by fefo             ###   ########.fr       */
+/*   Updated: 2025/05/08 23:16:53 by fefo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	time_checker(t_state_data *sdata)
 	int		i;
 
 	i = -1;
-	if (check_death(sdata))
+	if (death_checker(sdata))
 		return (1);
 	while (++i < sdata->counter_philos)
 	{
@@ -27,7 +27,7 @@ int	time_checker(t_state_data *sdata)
 	return (0);
 }
 
-void *death_checker(t_state_data *sdata)
+int death_checker(t_state_data *sdata)
 {
 	pthread_mutex_lock(&sdata->mutex_dead);
 	if (sdata->dead)
@@ -55,7 +55,7 @@ void	*routine_checker(void *arg)
 	return (NULL);
 }
 
-int	meal_check(t_state_data *sdata)
+int	meal_checker(t_state_data *sdata)
 {
 	int	i;
 
